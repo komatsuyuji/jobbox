@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+# jobbox-server Startup script for the Jobbox Server
+#
+# chkconfig: - 90 15
+# description:  Jobbox Server
+# processname: jobbox_server
+# config: /opt/jobbox/etc/jobbox_server.conf
+# pidfile: /opt/jobbox/run/jobbox_server.pid
+
+# jobarg details
+BIN=/opt/jobbox/sbin/jobbox_server
+CONF=/opt/jobbox/etc/jobbox_server.conf
+PIDFILE=/opt/jobbox/run/jobbox_server.pid
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ ${NETWORKING} = "no" ] && exit 0
+
+[ -e $CONF ] || exit 6
+
+RETVAL=0
+
+case "$1" in
+    start)
+        echo -n "Starting Jobbox Server: "
+        daemon $BIN -c $CONF
+        RETVAL=$?
+        echo
+        [ $RETVAL -eq 0 ] && touch /opt/jobbox/lock/jobbox_server
+        ;;
+    stop)
+        echo -n "Shutting down Jobbox Server: "
+        killproc -p $PIDFILE
+        RETVAL=$?
+        echo
+        [ $RETVAL -eq 0 ] && rm -f /opt/jobbox/lock/jobbox_server
+        ;;
+    restart)
+        $0 stop
+        sleep 3
+        $0 start
+        RETVAL=$?
+        ;;
+    condrestart)
+        if [ -f /opt/jobbox/lock/jobbox_server ]; then
+            $0 stop
+            $0 start
+        fi
+        RETVAL=$?
+        ;;
+    status)
+        status $BIN
+        RETVAL=$?
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|condrestart|status}"
+        exit 1
+        ;;
+esac
+
+exit $RETVAL

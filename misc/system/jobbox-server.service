@@ -1,0 +1,16 @@
+[Unit]
+Description=Jobbox Server
+After=syslog.target
+After=network.target
+
+[Service]
+Environment="CONFFILE=/opt/jobbox/etc/jobbox_server.conf"
+EnvironmentFile=-/etc/sysconfig/jobbox-server
+Type=forking
+Restart=always
+PIDFile=/opt/jobbox/run/jobbox_server.pid
+KillMode=process
+ExecStart=/opt/jobbox/sbin/jobbox_server -c $CONFFILE
+
+[Install]
+WantedBy=multi-user.target
