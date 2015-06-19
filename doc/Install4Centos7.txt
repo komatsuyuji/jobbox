@@ -26,13 +26,6 @@ http://www.famfamfam.com/lab/icons/silk/famfamfam_silk_icons_v013.zip
   jobbx-X.X.X
   ext-4.2.1-gpl.zip 
   famfamfam_silk_icons_v013.zip
-  sblim-sfcc-2.2.5-6.el7.x86_64.rpm
-  sblim-sfcc-devel-2.2.5-6.el7.x86_64.rpm
-  libwsman1-2.3.6-13.el7.x86_64.rpm
-  wsmancli-2.3.0-4.el7.x86_64.rpm
-  openwsman-client-2.3.6-13.el7.x86_64.rpm
-  openwsman-server-2.3.6-13.el7.x86_64.rpm
-  libwsman-devel-2.3.6-13.el7.x86_64.rpm
 を配置してください。
 
 4. 必要なものインストール

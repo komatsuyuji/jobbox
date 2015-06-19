@@ -11,6 +11,8 @@ http://ftp.riken.jp/Linux/centos/7/os/x86_64/Packages/wsmancli-2.3.0-4.el7.x86_6
 http://ftp.riken.jp/Linux/centos/7/os/x86_64/Packages/openwsman-client-2.3.6-13.el7.x86_64.rpm
 http://ftp.riken.jp/Linux/centos/7/os/x86_64/Packages/openwsman-server-2.3.6-13.el7.x86_64.rpm
 http://ftp.riken.jp/Linux/centos/7/os/x86_64/Packages/libwsman-devel-2.3.6-13.el7.x86_64.rpm
+http://epel.mirror.srv.co.ge/7/x86_64/l/libcsv-3.0.3-2.el7.x86_64.rpm
+http://epel.mirror.srv.co.ge/7/x86_64/l/libcsv-devel-3.0.3-2.el7.x86_64.rpm
 
 2. 配置(rootユーザ実行)
 2.1 インストール先の作成
@@ -29,6 +31,8 @@ http://ftp.riken.jp/Linux/centos/7/os/x86_64/Packages/libwsman-devel-2.3.6-13.el
   openwsman-client-2.3.6-13.el7.x86_64.rpm
   openwsman-server-2.3.6-13.el7.x86_64.rpm
   libwsman-devel-2.3.6-13.el7.x86_64.rpm
+  libcsv-3.0.3-2.el7.x86_64.rpm
+  libcsv-devel-3.0.3-2.el7.x86_64.rpm
 を配置してください。
 
 3. 必要なものインストール
@@ -40,12 +44,12 @@ http://ftp.riken.jp/Linux/centos/7/os/x86_64/Packages/libwsman-devel-2.3.6-13.el
 # yum -y install libxml2 libxml2-devel mysql mysql-server mysql-devel libdbi libdbi-dbd-mysql libdbi-devel libdbi-drivers
 # yum -y install libyaml libyaml-devel sqlite sqlite-devel httpd httpd-devel
 # yum -y install apr apr-devel apr-util apr-util-devel
-# yum -y install libcsv libcsv-devel
 
 # cd /opt/tools
 # rpm -ivh sblim-sfcc-2.2.5-6.el7.x86_64.rpm sblim-sfcc-devel-2.2.5-6.el7.x86_64.rpm
-# rpm -ivh libwsman1-2.3.6-13.el7.x86_64.rpm wsmancli-2.3.0-4.el7.x86_64.rp 
+# rpm -ivh libwsman1-2.3.6-13.el7.x86_64.rpm wsmancli-2.3.0-4.el7.x86_64.rpm
 # rpm -ivh openwsman-client-2.3.6-13.el7.x86_64.rpm openwsman-server-2.3.6-13.el7.x86_64.rpm libwsman-devel-2.3.6-13.el7.x86_64.rpm 
+# rpm -ivh libcsv-3.0.3-2.el7.x86_64.rpm libcsv-devel-3.0.3-2.el7.x86_64.rpm
 
 3.2 bundlerインストール
 # gem install bundler
