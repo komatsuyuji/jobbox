@@ -43,7 +43,7 @@ http://epel.mirror.srv.co.ge/7/x86_64/l/libcsv-devel-3.0.3-2.el7.x86_64.rpm
 # yum -y install zlib zlib-devel openssl openssl-devel libssh2 libssh2-devel readline readline-devel curl libcurl libcurl-devel
 # yum -y install libxml2 libxml2-devel mysql mysql-server mysql-devel libdbi libdbi-dbd-mysql libdbi-devel libdbi-drivers
 # yum -y install libyaml libyaml-devel sqlite sqlite-devel httpd httpd-devel
-# yum -y install apr apr-devel apr-util apr-util-devel
+# yum -y install apr apr-devel apr-util apr-util-devel libxslt-devel
 
 # cd /opt/tools
 # rpm -ivh sblim-sfcc-2.2.5-6.el7.x86_64.rpm sblim-sfcc-devel-2.2.5-6.el7.x86_64.rpm
@@ -83,6 +83,8 @@ SQL> SET PASSWORD FOR jobbox@localhost=password('jobbox')
 
 6.2 必要なgemインストール
 # cd /opt/jobbox/frontends
+# gem install io-console
+# bundler install build.nokogiri --use-system-libraries
 # bundler install --path vendor/bundler
 
 6.3 jobboxテーブル作成と初期データ投入
