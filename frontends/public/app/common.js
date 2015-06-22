@@ -211,7 +211,8 @@ var USER_KIND_DATA = [
 
 var USER_LANGUAGE_DATA = [
   ['en', 'English'],
-  ['ja', '日本語']
+  ['ja', '日本語'],
+  ['zh_CH', '中文简体']
 ];
 
 var CONFIGURE_VIEWER_DATA = [
